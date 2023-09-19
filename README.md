@@ -17,8 +17,8 @@ Use Hibernate to persist the post and user data in the database.
 1. Clone this repository:
 
    ```sh
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
+   git clone https://github.com/Seniuk-Vi/SocialMedia-AI-task
+   cd SocialMedia-AI-task
    ```
 
 2. Create empty PostgreSQL database and add credentials to hibernate.cfg.xml
@@ -46,7 +46,7 @@ control.
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 
-###To run SonarQube analysis in Docker, follow these steps:
+### To run SonarQube analysis in Docker, follow these steps:
 
 1. Run Docker and run sonarqube
 
@@ -58,6 +58,7 @@ control.
    for both the username and password.
 
 3. Create settings.xml in your `User/.m2` folder. Pass your credentials to SonarQube.
+
    ![img_1.png](img_1.png)
 
 4. Run the analysis: In the terminal, navigate to your project's root directory and execute the following command:
@@ -71,19 +72,18 @@ control.
 
 # Feedback
 
-- Was it easy to complete the task using AI?
+1. Was it easy to complete the task using AI?
   _Quite easy, but there were some problems with `hibernate`, AI just insisted on using JPA, and it was hard to
   get proper configuration for plain hibernate._
-
-- How long did task take you to complete? (Please be honest, we need it to gather anonymized statistics)
+2. How long did task take you to complete? (Please be honest, we need it to gather anonymized statistics)
   _Around 7 hours._
-- Was the code ready to run after generation? What did you have to change to make it usable?
+3. Was the code ready to run after generation? What did you have to change to make it usable?
   _For plain java it was perfect. But when using hibernate, chat provided deprecated arguments for configuration.
   Also with when working with SonarQube + Spring Boot, it was hard to configure, on the internet there no a lot of
   helpful articles about it, I need to combine Chat and Internet to get that working._
-- Which challenges did you face during completion of the task?
+4. Which challenges did you face during completion of the task?
   _Hibernate and SonarQube (with JaCoCo) configuration._
-- Which specific prompts you learned as a good practice to complete the task?
+5. Which specific prompts you learned as a good practice to complete the task?
   _I used Chat to generate phases of building such project, and asked to add questions to each phase, that I can
   ask Chat to help me_
 
