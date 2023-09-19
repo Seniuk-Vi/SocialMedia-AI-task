@@ -73,17 +73,17 @@ control.
 # Feedback
 
 1. Was it easy to complete the task using AI?
-  _Quite easy, but there were some problems with `hibernate`, AI just insisted on using JPA, and it was hard to
-  get proper configuration for plain hibernate._
+   _ Quite easy, but there were some problems with `hibernate`, AI just insisted on using JPA, and it was hard to
+   get proper configuration for plain hibernate.
 2. How long did task take you to complete? (Please be honest, we need it to gather anonymized statistics)
-  _Around 7 hours._
+   _ Around 7 hours.
 3. Was the code ready to run after generation? What did you have to change to make it usable?
-  _For plain java it was perfect. But when using hibernate, chat provided deprecated arguments for configuration.
-  Also with when working with SonarQube + Spring Boot, it was hard to configure, on the internet there no a lot of
-  helpful articles about it, I need to combine Chat and Internet to get that working._
+   _ For plain java it was perfect. But when using hibernate, chat provided deprecated arguments for configuration.
+   Also with when working with SonarQube + Spring Boot, it was hard to configure, on the internet there no a lot of
+   helpful articles about it, I need to combine Chat and Internet to get that working.
 4. Which challenges did you face during completion of the task?
-  _Hibernate and SonarQube (with JaCoCo) configuration._
+   _ Hibernate and SonarQube (with JaCoCo) configuration.
 5. Which specific prompts you learned as a good practice to complete the task?
-  _I used Chat to generate phases of building such project, and asked to add questions to each phase, that I can
-  ask Chat to help me_
+   _ I used Chat to generate phases of building such project, and asked to add questions to each phase, that I can
+   ask Chat to help me.
 
