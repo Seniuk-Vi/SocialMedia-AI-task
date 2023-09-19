@@ -2,8 +2,6 @@ package com.epam.lab.socialmediaaitask.Services;
 
 import com.epam.lab.socialmediaaitask.Models.Like;
 import com.epam.lab.socialmediaaitask.Repository.LikeRepository;
-import com.epam.lab.socialmediaaitask.Repository.PostRepository;
-import com.epam.lab.socialmediaaitask.Repository.UserRepository;
 import com.epam.lab.socialmediaaitask.Services.impl.LikeServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,20 +15,19 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class LikeServiceTest {
+class LikeServiceTest {
     @InjectMocks
     private LikeServiceImpl likeService;
     @Mock
     private LikeRepository likeRepository;
 
 
-
     @Test
-    public void testFindById() {
+    void testFindById() {
         Like like = new Like();
         like.setId(1L);
         when(likeRepository.findById(1L)).thenReturn(like);
@@ -41,20 +38,20 @@ public class LikeServiceTest {
     }
 
     @Test
-    public void testSaveOrUpdate() {
+    void testSaveOrUpdate() {
         Like like = new Like();
         likeService.saveOrUpdate(like);
         verify(likeRepository, times(1)).saveOrUpdate(like);
     }
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         likeService.delete(1L);
         verify(likeRepository, times(1)).delete(1L);
     }
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         Like like = new Like();
         when(likeRepository.findAll()).thenReturn(Collections.singletonList(like));
 

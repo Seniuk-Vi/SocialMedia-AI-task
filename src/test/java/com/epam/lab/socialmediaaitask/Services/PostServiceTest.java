@@ -1,8 +1,5 @@
 package com.epam.lab.socialmediaaitask.Services;
 
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.epam.lab.socialmediaaitask.Models.Post;
 import com.epam.lab.socialmediaaitask.Repository.PostRepository;
 import com.epam.lab.socialmediaaitask.Services.impl.PostServiceImpl;
@@ -15,17 +12,22 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Collections;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 @ExtendWith(MockitoExtension.class)
-public class PostServiceTest {
+class PostServiceTest {
     @InjectMocks
     private PostServiceImpl postService;
     @Mock
     private PostRepository postRepository;
 
 
-
     @Test
-    public void testFindById() {
+    void testFindById() {
         Post post = new Post();
         post.setId(1L);
         when(postRepository.findById(1L)).thenReturn(post);
@@ -36,20 +38,20 @@ public class PostServiceTest {
     }
 
     @Test
-    public void testSaveOrUpdate() {
+    void testSaveOrUpdate() {
         Post post = new Post();
         postService.saveOrUpdate(post);
         verify(postRepository, times(1)).saveOrUpdate(post);
     }
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         postService.delete(1L);
         verify(postRepository, times(1)).delete(1L);
     }
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         Post post = new Post();
         when(postRepository.findAll()).thenReturn(Collections.singletonList(post));
 

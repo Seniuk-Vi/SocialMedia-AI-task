@@ -1,8 +1,5 @@
 package com.epam.lab.socialmediaaitask.Services;
 
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.epam.lab.socialmediaaitask.Models.User;
 import com.epam.lab.socialmediaaitask.Repository.UserRepository;
 import com.epam.lab.socialmediaaitask.Services.impl.UserServiceImpl;
@@ -16,8 +13,16 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 @ExtendWith(MockitoExtension.class)
-public class UserServiceTest {
+class UserServiceTest {
     @InjectMocks
     private UserServiceImpl userService;
     @Mock
@@ -25,7 +30,7 @@ public class UserServiceTest {
 
 
     @Test
-    public void testFindById() {
+    void testFindById() {
         User user = new User();
         user.setId(1L);
         when(userRepository.findById(1L)).thenReturn(user);
@@ -36,20 +41,20 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testSaveOrUpdate() {
+    void testSaveOrUpdate() {
         User user = new User();
         userService.saveOrUpdate(user);
         verify(userRepository, times(1)).saveOrUpdate(user);
     }
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         userService.delete(1L);
         verify(userRepository, times(1)).delete(1L);
     }
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         User user = new User();
         when(userRepository.findAll()).thenReturn(Collections.singletonList(user));
 
@@ -59,9 +64,9 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testFollowUser() {
+    void testFollowUser() {
         // Create test users
-        User userToFollow =spy(new User()) ;
+        User userToFollow = spy(new User());
         userToFollow.setId(1L);
         User follower = new User();
         follower.setId(2L);

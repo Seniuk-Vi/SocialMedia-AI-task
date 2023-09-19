@@ -2,8 +2,6 @@ package com.epam.lab.socialmediaaitask.Services.impl;
 
 import com.epam.lab.socialmediaaitask.Models.Like;
 import com.epam.lab.socialmediaaitask.Repository.LikeRepository;
-import com.epam.lab.socialmediaaitask.Repository.PostRepository;
-import com.epam.lab.socialmediaaitask.Repository.UserRepository;
 import com.epam.lab.socialmediaaitask.Services.LikeService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
